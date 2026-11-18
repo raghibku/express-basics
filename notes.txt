@@ -1,0 +1,10 @@
+npm init -y
+"type": "module",
+npm i -D typescript
+ "main": "server.ts",
+ npx tsc --init
+ npm i --save-dev @types/express
+ npm i tsx 
+
+package.json -> script -> "dev" : "tsx watch ./src/server.ts"
+
