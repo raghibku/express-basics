@@ -8,3 +8,16 @@ npm i -D typescript
 
 package.json -> script -> "dev" : "tsx watch ./src/server.ts"
 
+npm i pg
+npm i @types/pg
+
+
+npm i dotenv
+
+
+modular pattern
+student.interface.ts
+student.route.ts
+student.model.ts
+student.controller.ts
+student.service.ts
