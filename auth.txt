@@ -1,0 +1,24 @@
+npm i bcryptjs
+import bcrypt from "bcryptjs";
+const hashPassword = password ? await bcrypt.hash(password, 10) : null; 
+
+const jwtPayload = {id,userEmail,role}
+const token = jwt.sign(
+    jwtPayload,
+    secret,
+    {
+        expiresIn:'1d'
+    }
+);
+
+Json Web Token
+
+varify and identify user
+
+header.payload.signature
+header - algorithm
+payload - the data we want to hash
+signature - header + payload , secret key ----> generate token
+
+client => payload (email + pass) -------------------- > server => Authenticate ---------> create jwt token ---------> send to client as response --------------> client  use the jwt token
+
