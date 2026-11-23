@@ -5,15 +5,24 @@ import { profileRoute } from './modules/profiles/profile.route.js';
 import { authRoute } from './modules/auth/auth.route.js';
 import fs from 'fs'
 import logger from './middleware/logger.js';
+import globalErrorHandler from './middleware/globalErrorHandler.js';
+import cors from "cors"
+import cookieParser from "cookie-parser";
 
 const app: Application = express()
 
 app.use(express.json())
 app.use(express.text())
+app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))
 
 // custom
 app.use(logger)
+const corsOptions = {
+    origin : ['http://localhost:3000'],
+    optionsSuccessStatus : 200
+}
+app.use(cors(corsOptions))
 
 
 app.get('/', (req: Request, res: Response) => {
@@ -51,5 +60,6 @@ app.use("/api/v1/auth" , authRoute);
 app.listen(config.port, () => {
     console.log(`Example app listening on port ${config.port}`)
 })
+app.use(globalErrorHandler);
 
 export default app;

@@ -13,8 +13,6 @@ const auth = (...roles: Role[]) => {
         // 3 => check if user exists
         // 4 => check if user is active
         try {
-
-
             const token = req.headers.authorization;
 
             if (!token) {

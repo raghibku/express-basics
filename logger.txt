@@ -35,3 +35,5 @@ Method : GET  | url : /api/v1/users  | Time : 1795343597844
 Method : GET  | url : /api/v1/users  | Time : 1795343675279
 
 Method : GET  | url : /api/v1/users  | Time : 1795344181806
+
+Method : GET  | url : /api/v1/users/1  | Time : 1795372877577
